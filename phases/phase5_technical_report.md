@@ -60,3 +60,10 @@ The RAG system demonstrates production readiness through robust architecture and
 **Deployment Recommendations** include implementing health checks and monitoring for the vector database, and setting up automated backup procedures for the embedding store. The system requires minimum 8GB RAM for optimal performance, with CPU-only deployment suitable for development and small-scale production. For larger deployments, GPU acceleration would provide 3-5x speedup for embedding generation and reranking operations.
 
 **Current Limitations** include CPU-only processing limiting throughput to ~30 queries/minute, lack of real-time model updates requiring full re-indexing for new documents, and memory constraints limiting batch processing to 50 queries per worker. The system requires periodic maintenance for temporary file cleanup and database optimization. Furthermore, sharing an OpenAI key meant that evaluation was not conducted for the up-to-date results since the quota was reached before attempts could be made. **Future Enhancements** should focus on GPU acceleration, distributed processing across multiple machines, and dynamic model loading to support real-time updates and improved fault tolerance.
+
+## Appendix
+- For RAGAs: https://medium.com/data-science/evaluating-rag-applications-with-ragas-81d67b0ee31a, https://github.com/explodinggradients/ragas
+- Multiprocessing: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html
+- Enhancing RAG: https://towardsdatascience.com/17-advanced-rag-techniques-to-turn-your-rag-app-prototype-into-a-production-ready-solution-5a048e36cdc8/#e074
+- Cross-encoder reranking: https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2, https://medium.com/@aishikbhattacharjee98/reranking-using-cross-encoder-boost-your-rag-pipeline-accuracy-d2da22006dad
+- All code was developed in VSCode, which is connected to free version of GitHub Copilot, used as an AI pair programmer to assist in code generation and debugging.
